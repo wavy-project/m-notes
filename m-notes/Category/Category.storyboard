@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Category View Controller-->
         <scene sceneID="7s5-aA-waw">
             <objects>
-                <viewController id="cI2-Yw-110" sceneMemberID="viewController">
+                <viewController id="cI2-Yw-110" customClass="CategoryViewController" customModule="m_notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TCc-DV-yDP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,9 @@
                         <viewLayoutGuide key="safeArea" id="S3f-VC-xHi"/>
                     </view>
                     <navigationItem key="navigationItem" id="UHW-2f-fBX"/>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="Jwx-bq-hDx" id="Msa-v5-x94"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1M-rf-9xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

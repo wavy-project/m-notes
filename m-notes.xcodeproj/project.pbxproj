@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25E9F95B21FD126A00BD5F11 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */; };
+		25E9F95F21FD137800BD5F11 /* NoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */; };
 		25ECC3AB21F5273E00907A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ECC3AA21F5273E00907A04 /* AppDelegate.swift */; };
 		25ECC3B021F5273E00907A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25ECC3AE21F5273E00907A04 /* Main.storyboard */; };
 		25ECC3B221F5274000907A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25ECC3B121F5274000907A04 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		0E72E735BD4B0D4D455CC443 /* Pods-m-notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-m-notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-m-notes/Pods-m-notes.release.xcconfig"; sourceTree = "<group>"; };
+		25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCollectionViewCell.xib; sourceTree = "<group>"; };
 		25ECC3A721F5273E00907A04 /* m-notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "m-notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25ECC3AA21F5273E00907A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25ECC3AF21F5273E00907A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,7 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				25ECC3BC21F52A0100907A04 /* Category.storyboard */,
+				25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */,
 				25ECC3BF21F52BE000907A04 /* CategoryViewController.swift */,
+				25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				25ECC3C221F52CBA00907A04 /* Home.storyboard in Resources */,
 				25ECC3B521F5274000907A04 /* LaunchScreen.storyboard in Resources */,
 				25ECC3B221F5274000907A04 /* Assets.xcassets in Resources */,
+				25E9F95F21FD137800BD5F11 /* NoteCollectionViewCell.xib in Resources */,
 				25ECC3B021F5273E00907A04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +257,7 @@
 			files = (
 				25ECC3C021F52BE000907A04 /* CategoryViewController.swift in Sources */,
 				25ECC3AB21F5273E00907A04 /* AppDelegate.swift in Sources */,
+				25E9F95B21FD126A00BD5F11 /* NoteCollectionViewCell.swift in Sources */,
 				25ECC3CA21F52E5B00907A04 /* NavigationEmbeddedViewController.swift in Sources */,
 				25ECC3C521F52D4100907A04 /* HomeViewController.swift in Sources */,
 			);

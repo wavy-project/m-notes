@@ -8,11 +8,24 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: NavigationEmbeddedViewController {
 
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // TODO: Ability to edit
     }
+}
+
+extension NavigationEmbeddedViewController: UICollectionViewDelegate {
+    
+}
+
+extension NavigationEmbeddedViewController: UICollectionViewDataSource {
+    
 }
