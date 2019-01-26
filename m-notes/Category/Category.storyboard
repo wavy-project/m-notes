@@ -58,7 +58,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wYH-Ja-3S4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E2b-Fi-28o" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryListNC" automaticallyAdjustsScrollViewInsets="NO" id="E2b-Fi-28o" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lvl-lB-OGR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

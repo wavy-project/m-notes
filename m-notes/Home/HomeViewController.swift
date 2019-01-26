@@ -24,16 +24,28 @@ class HomeViewController: NavigationEmbeddedViewController {
         self.addChild(self.appTabBarController)
         self.view.addSubview(self.appTabBarController.view)
         self.appTabBarController.didMove(toParent: self)
-        // self.appTabBarController.viewControllers = [categoryListNC, categoryNC, settingsNC]
+        self.appTabBarController.viewControllers = [categoryListNavigationController(), categoryNavigationController() /* ,  settingsNavigationController() */]
     }
     
-
-    /*
-     - All notes (front channel followed by back channel)
-     - front channel
-     - back channel
-     - color (r o y g b i v p)
-     - user-specified category
-     */
-
+    fileprivate func categoryListNavigationController() -> UINavigationController {
+        let findStoryboard = UIStoryboard(name: "CategoryList", bundle: nil)
+        let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryListNC") as! UINavigationController
+        findNC.tabBarItem = UITabBarItem(title: "CATEGORY LIST", image: UIImage(named: "menu-icon"), selectedImage: nil)
+        findNC.tabBarItem.setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 9)!
+            ] as [NSAttributedString.Key : Any], for: .normal)
+        return findNC
+    }
+    
+    fileprivate func categoryNavigationController() -> UINavigationController {
+        let findStoryboard = UIStoryboard(name: "Category", bundle: nil)
+        let findNC = findStoryboard.instantiateViewController(withIdentifier: "CoffeeShopSelectionNC") as! UINavigationController
+        findNC.tabBarItem = UITabBarItem(title: "CATEGORY", image: UIImage(named: "category-icon"), selectedImage: nil)
+        findNC.tabBarItem.setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 9)!
+            ] as [NSAttributedString.Key : Any], for: .normal)
+        return findNC
+    }
 }
