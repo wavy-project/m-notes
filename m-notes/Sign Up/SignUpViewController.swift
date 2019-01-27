@@ -11,6 +11,14 @@ import Parse
 
 class SignUpViewController: NavigationEmbeddedViewController {
     
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var termsOfUseAndPrivacyPolicyCheckboxButton: RoundedButton!
+    @IBOutlet weak var scrollViewContentContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: BiggerHitButton!
+    
     var emailAddress: String?
     var password: String?
     var giftedPlanID: String?
@@ -46,7 +54,7 @@ class SignUpViewController: NavigationEmbeddedViewController {
     }
 
     @IBAction func onTermsOfUseCheckboxButtonTapped(_ sender: Any) {
-        self.termsOfUseCheckboxButton.isSelected = !self.termsOfUseCheckboxButton.isSelected
+        self.termsOfUseAndPrivacyPolicyCheckboxButton.isSelected = !self.termsOfUseAndPrivacyPolicyCheckboxButton.isSelected
         self.view.endEditing(true)
     }
     
@@ -63,11 +71,20 @@ class SignUpViewController: NavigationEmbeddedViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func onLogInButtonTapped(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.presentLoginViewController(animated: true, email: self.emailTextField.text, password: self.passwordTextField.text)
-    }
 
+}
+
+// MARK: - Text Field Delegate
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = textField.nextTextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            self.view.endEditing(true)
+        }
+        return true
+    }
 }
 
 // MARK: - Parse

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D21D9921FE2C3B000CC971 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9821FE2C3B000CC971 /* RoundedButton.swift */; };
+		25D21D9B21FE2C50000CC971 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9A21FE2C50000CC971 /* RoundedView.swift */; };
+		25D21D9D21FE2C99000CC971 /* UITextField+NextTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */; };
+		25D21D9F21FE2CDD000CC971 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9E21FE2CDD000CC971 /* Utilities.swift */; };
+		25D21DA121FE2D44000CC971 /* BiggerHitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21DA021FE2D43000CC971 /* BiggerHitButton.swift */; };
+		25D21DA321FE30EF000CC971 /* PasswordResetRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21DA221FE30EF000CC971 /* PasswordResetRequestViewController.swift */; };
+		25D21DA521FE312A000CC971 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21DA421FE312A000CC971 /* PasswordResetViewController.swift */; };
+		25D21DA721FE317D000CC971 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D21DA621FE317D000CC971 /* LogIn.storyboard */; };
+		25D21DAA21FE31AC000CC971 /* PasswordReset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D21DA921FE31AC000CC971 /* PasswordReset.storyboard */; };
 		25E9F95B21FD126A00BD5F11 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */; };
 		25E9F95F21FD137800BD5F11 /* NoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */; };
 		25E9F96421FD1B7900BD5F11 /* CategoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E9F96321FD1B7900BD5F11 /* CategoryList.storyboard */; };
@@ -32,6 +41,15 @@
 
 /* Begin PBXFileReference section */
 		0E72E735BD4B0D4D455CC443 /* Pods-m-notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-m-notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-m-notes/Pods-m-notes.release.xcconfig"; sourceTree = "<group>"; };
+		25D21D9821FE2C3B000CC971 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		25D21D9A21FE2C50000CC971 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+NextTextField.swift"; sourceTree = "<group>"; };
+		25D21D9E21FE2CDD000CC971 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		25D21DA021FE2D43000CC971 /* BiggerHitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerHitButton.swift; sourceTree = "<group>"; };
+		25D21DA221FE30EF000CC971 /* PasswordResetRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequestViewController.swift; sourceTree = "<group>"; };
+		25D21DA421FE312A000CC971 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		25D21DA621FE317D000CC971 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		25D21DA921FE31AC000CC971 /* PasswordReset.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordReset.storyboard; sourceTree = "<group>"; };
 		25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCollectionViewCell.xib; sourceTree = "<group>"; };
 		25E9F96321FD1B7900BD5F11 /* CategoryList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryList.storyboard; sourceTree = "<group>"; };
@@ -70,6 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25D21DA821FE3184000CC971 /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				25D21DA621FE317D000CC971 /* LogIn.storyboard */,
+				25E9F97521FE149500BD5F11 /* LoginViewController.swift */,
+			);
+			path = "Log In";
+			sourceTree = "<group>";
+		};
+		25D21DAB21FE31BA000CC971 /* Password Reset */ = {
+			isa = PBXGroup;
+			children = (
+				25D21DA921FE31AC000CC971 /* PasswordReset.storyboard */,
+				25D21DA221FE30EF000CC971 /* PasswordResetRequestViewController.swift */,
+				25D21DA421FE312A000CC971 /* PasswordResetViewController.swift */,
+			);
+			path = "Password Reset";
+			sourceTree = "<group>";
+		};
 		25E9F96221FD1B5400BD5F11 /* Category List */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +131,6 @@
 			children = (
 				25E9F96E21FE0F2300BD5F11 /* SignUp.storyboard */,
 				25E9F97121FE0FD000BD5F11 /* SignUpViewController.swift */,
-				25E9F97521FE149500BD5F11 /* LoginViewController.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -124,6 +160,8 @@
 				25ECC3B121F5274000907A04 /* Assets.xcassets */,
 				25ECC3CB21F52E6800907A04 /* Common */,
 				25E9F97021FE0F3700BD5F11 /* Sign Up */,
+				25D21DA821FE3184000CC971 /* Log In */,
+				25D21DAB21FE31BA000CC971 /* Password Reset */,
 				25ECC3BE21F52B7B00907A04 /* Category */,
 				25E9F96221FD1B5400BD5F11 /* Category List */,
 				25ECC3C321F52CC000907A04 /* Home */,
@@ -157,9 +195,14 @@
 		25ECC3CB21F52E6800907A04 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				25D21DA021FE2D43000CC971 /* BiggerHitButton.swift */,
 				25E9F97321FE100200BD5F11 /* Constants.swift */,
 				25ECC3C921F52E5B00907A04 /* NavigationEmbeddedViewController.swift */,
 				25E9F96C21FE074E00BD5F11 /* LoadingView.swift */,
+				25D21D9821FE2C3B000CC971 /* RoundedButton.swift */,
+				25D21D9A21FE2C50000CC971 /* RoundedView.swift */,
+				25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */,
+				25D21D9E21FE2CDD000CC971 /* Utilities.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -245,7 +288,9 @@
 				25ECC3BD21F52A0100907A04 /* Category.storyboard in Resources */,
 				25E9F96F21FE0F2300BD5F11 /* SignUp.storyboard in Resources */,
 				25ECC3C221F52CBA00907A04 /* Home.storyboard in Resources */,
+				25D21DA721FE317D000CC971 /* LogIn.storyboard in Resources */,
 				25E9F96821FD1DA700BD5F11 /* CategoryTableViewCell.xib in Resources */,
+				25D21DAA21FE31AC000CC971 /* PasswordReset.storyboard in Resources */,
 				25ECC3B521F5274000907A04 /* LaunchScreen.storyboard in Resources */,
 				25ECC3B221F5274000907A04 /* Assets.xcassets in Resources */,
 				25E9F95F21FD137800BD5F11 /* NoteCollectionViewCell.xib in Resources */,
@@ -309,13 +354,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D21DA321FE30EF000CC971 /* PasswordResetRequestViewController.swift in Sources */,
+				25D21DA521FE312A000CC971 /* PasswordResetViewController.swift in Sources */,
+				25D21D9D21FE2C99000CC971 /* UITextField+NextTextField.swift in Sources */,
+				25D21DA121FE2D44000CC971 /* BiggerHitButton.swift in Sources */,
 				25ECC3C021F52BE000907A04 /* CategoryViewController.swift in Sources */,
 				25ECC3AB21F5273E00907A04 /* AppDelegate.swift in Sources */,
+				25D21D9F21FE2CDD000CC971 /* Utilities.swift in Sources */,
 				25E9F96621FD1C0D00BD5F11 /* CategoryListViewController.swift in Sources */,
 				25E9F95B21FD126A00BD5F11 /* NoteCollectionViewCell.swift in Sources */,
 				25E9F96B21FD1DE000BD5F11 /* CategoryTableViewCell.swift in Sources */,
 				25E9F97421FE100300BD5F11 /* Constants.swift in Sources */,
 				25E9F96D21FE074E00BD5F11 /* LoadingView.swift in Sources */,
+				25D21D9B21FE2C50000CC971 /* RoundedView.swift in Sources */,
+				25D21D9921FE2C3B000CC971 /* RoundedButton.swift in Sources */,
 				25E9F97221FE0FD000BD5F11 /* SignUpViewController.swift in Sources */,
 				25ECC3CA21F52E5B00907A04 /* NavigationEmbeddedViewController.swift in Sources */,
 				25ECC3C521F52D4100907A04 /* HomeViewController.swift in Sources */,

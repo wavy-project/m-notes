@@ -9,6 +9,10 @@
 import UIKit
 
 class LoginViewController: NavigationEmbeddedViewController {
+    
+    var emailAddress: String?
+    var password: String?
+    var giftedPlanID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

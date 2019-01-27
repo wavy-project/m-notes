@@ -42,7 +42,7 @@ class LoadingView: UIView {
     }
     
     func commonInit() {
-        self.charColor = Constants.beige
+        self.charColor = .white
     }
     
     func addExemptFrames(_ exemptFrames: CGRect...) {
