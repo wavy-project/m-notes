@@ -44,3 +44,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    private func present(_ viewController: UIViewController, animated: Bool) {
+        if animated {
+            viewController.modalTransitionStyle = .crossDissolve
+            window?.rootViewController?.present(viewController, animated: true, completion: {
+                self.window?.rootViewController = viewController
+                // viewController.dismiss(animated: false, completion: nil)
+            })
+        } else {
+            // Does exactly the same as arrow in storyboard. ("100% parity." --Tim Lee)
+            window?.rootViewController = viewController
+        }
+    }
+    
+    func presentSignUpViewController(animated: Bool, email: String? = nil, password: String? = nil, giftedPlanID: String? = nil) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let signupNC = storyboard.instantiateViewController(withIdentifier: "SignUpNC") as! UINavigationController
+        let signupVC = signupNC.viewControllers[0] as! SignUpViewController
+        signupVC.emailAddress = email
+        signupVC.password = password
+        signupVC.giftedPlanID = giftedPlanID
+        present(signupNC, animated: animated)
+    }
+    
+    func presentLoginViewController(animated: Bool, email: String? = nil, password: String? = nil) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let loginNC = storyboard.instantiateViewController(withIdentifier: "LoginNC") as! UINavigationController
+        let loginVC = loginNC.viewControllers[0] as! LoginViewController
+        loginVC.emailAddress = email
+        loginVC.password = password
+        present(loginNC, animated: animated)
+    }
+}
