@@ -107,6 +107,15 @@
 			path = "Password Reset";
 			sourceTree = "<group>";
 		};
+		25D21DAC21FE3C11000CC971 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				25ECC3BC21F52A0100907A04 /* Category.storyboard */,
+				25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		25E9F96221FD1B5400BD5F11 /* Category List */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +171,8 @@
 				25E9F97021FE0F3700BD5F11 /* Sign Up */,
 				25D21DA821FE3184000CC971 /* Log In */,
 				25D21DAB21FE31BA000CC971 /* Password Reset */,
-				25ECC3BE21F52B7B00907A04 /* Category */,
 				25E9F96221FD1B5400BD5F11 /* Category List */,
+				25ECC3BE21F52B7B00907A04 /* Category */,
 				25ECC3C321F52CC000907A04 /* Home */,
 				25ECC3B621F5274000907A04 /* Info.plist */,
 				25ECC3B321F5274000907A04 /* LaunchScreen.storyboard */,
@@ -175,8 +184,7 @@
 		25ECC3BE21F52B7B00907A04 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				25ECC3BC21F52A0100907A04 /* Category.storyboard */,
-				25E9F95E21FD137800BD5F11 /* NoteCollectionViewCell.xib */,
+				25D21DAC21FE3C11000CC971 /* Layout */,
 				25ECC3BF21F52BE000907A04 /* CategoryViewController.swift */,
 				25E9F95A21FD126A00BD5F11 /* NoteCollectionViewCell.swift */,
 			);

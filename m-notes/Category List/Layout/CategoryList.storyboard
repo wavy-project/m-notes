@@ -67,17 +67,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjU-8U-kBb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeA-8U-Xa2" customClass="LoadingView" customModule="m_notes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FjU-8U-kBb" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="OvW-Io-3c6"/>
                             <constraint firstItem="NeA-8U-Xa2" firstAttribute="top" secondItem="N55-Jv-vz0" secondAttribute="top" id="PLx-Tz-DKb"/>
                             <constraint firstItem="9Vu-iS-Bbi" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="SBE-Pi-QyB"/>
                             <constraint firstAttribute="bottom" secondItem="9Vu-iS-Bbi" secondAttribute="bottom" id="Vet-kk-0xf"/>
                             <constraint firstItem="9Vu-iS-Bbi" firstAttribute="top" secondItem="N55-Jv-vz0" secondAttribute="top" id="Y9Z-kU-Eva"/>
+                            <constraint firstAttribute="trailing" secondItem="FjU-8U-kBb" secondAttribute="trailing" id="ZsQ-vu-wCs"/>
+                            <constraint firstAttribute="bottom" secondItem="FjU-8U-kBb" secondAttribute="bottom" id="bT6-em-aFq"/>
                             <constraint firstAttribute="trailing" secondItem="9Vu-iS-Bbi" secondAttribute="trailing" id="bsW-WW-WCS"/>
+                            <constraint firstItem="FjU-8U-kBb" firstAttribute="top" secondItem="N55-Jv-vz0" secondAttribute="top" id="gno-w2-ic6"/>
                             <constraint firstItem="NeA-8U-Xa2" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="h1W-b3-ehB"/>
                             <constraint firstAttribute="bottom" secondItem="NeA-8U-Xa2" secondAttribute="bottom" id="rDI-do-Os3"/>
                             <constraint firstAttribute="trailing" secondItem="NeA-8U-Xa2" secondAttribute="trailing" id="z0d-MU-gsi"/>
@@ -87,6 +94,7 @@
                     <navigationItem key="navigationItem" id="QNa-uu-bZP"/>
                     <connections>
                         <outlet property="categoryListTableView" destination="9Vu-iS-Bbi" id="swG-th-xIP"/>
+                        <outlet property="loadingBackgroundView" destination="FjU-8U-kBb" id="QLS-Rc-gbe"/>
                         <outlet property="loadingView" destination="NeA-8U-Xa2" id="ojr-NN-2Zt"/>
                     </connections>
                 </viewController>
@@ -97,7 +105,7 @@
         <!--Navigation Controller-->
         <scene sceneID="kzX-Le-sOy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="80x-Hc-dQX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryListNC" automaticallyAdjustsScrollViewInsets="NO" id="80x-Hc-dQX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YPM-dk-6Ch">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

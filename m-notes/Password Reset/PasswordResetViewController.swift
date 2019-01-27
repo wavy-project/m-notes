@@ -18,8 +18,8 @@ class PasswordResetViewController: NavigationEmbeddedViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var submitButtonTitleLabel: UILabel!
-    @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

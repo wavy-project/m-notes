@@ -267,7 +267,7 @@
                                     <constraint firstItem="X7b-R8-JSY" firstAttribute="top" secondItem="gbu-X4-wey" secondAttribute="top" id="mOI-bo-DAJ"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y96-mg-Yi7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y96-mg-Yi7">
                                 <rect key="frame" x="115" y="640" width="145" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a user? " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4e-4t-84K" userLabel="Already a user?">
@@ -306,12 +306,12 @@
                                     <constraint firstItem="FWo-4B-pQh" firstAttribute="top" secondItem="Y96-mg-Yi7" secondAttribute="top" id="pTN-ZF-kwQ"/>
                                 </constraints>
                             </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFd-AP-1Dg" customClass="LoadingView" customModule="m_notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
                             <view hidden="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U71-OA-2fO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFd-AP-1Dg" customClass="LoadingView" customModule="m_notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -319,6 +319,7 @@
                             <constraint firstItem="gbu-X4-wey" firstAttribute="leading" secondItem="rPK-Or-7C0" secondAttribute="leading" id="0XP-kW-4Lm"/>
                             <constraint firstAttribute="trailing" secondItem="lFd-AP-1Dg" secondAttribute="trailing" id="35X-Zt-eHt"/>
                             <constraint firstItem="U71-OA-2fO" firstAttribute="leading" secondItem="Gju-ly-esF" secondAttribute="leading" id="9Vl-8U-Uyl"/>
+                            <constraint firstItem="Y96-mg-Yi7" firstAttribute="centerX" secondItem="Gju-ly-esF" secondAttribute="centerX" id="Alx-JT-lku"/>
                             <constraint firstItem="lFd-AP-1Dg" firstAttribute="top" secondItem="Gju-ly-esF" secondAttribute="top" id="Hc3-o7-Lc3"/>
                             <constraint firstItem="U71-OA-2fO" firstAttribute="top" secondItem="Gju-ly-esF" secondAttribute="top" id="Hl4-c1-sL7"/>
                             <constraint firstItem="rPK-Or-7C0" firstAttribute="bottom" secondItem="Y96-mg-Yi7" secondAttribute="bottom" constant="10" id="Je7-9x-NfG"/>
@@ -336,8 +337,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="rUi-zh-I1B" id="WIJ-6Q-WDJ"/>
                         <outlet property="fullNameTextField" destination="8Eg-l0-Dcz" id="NHI-Lb-OEe"/>
-                        <outlet property="loadingBackgroundView" destination="U71-OA-2fO" id="OLu-8a-T5w"/>
-                        <outlet property="loadingView" destination="lFd-AP-1Dg" id="bjz-DT-6ap"/>
+                        <outlet property="loadingBackgroundView" destination="U71-OA-2fO" id="Jok-qC-5aI"/>
+                        <outlet property="loadingView" destination="lFd-AP-1Dg" id="Koa-Ul-iaB"/>
                         <outlet property="logInButton" destination="FWo-4B-pQh" id="Fzy-Nw-hzh"/>
                         <outlet property="passwordTextField" destination="oXQ-Fo-rzT" id="zA1-DB-L0G"/>
                         <outlet property="privacyPolicyLinkButton" destination="hNC-8T-zKy" id="ivP-gS-Q9d"/>

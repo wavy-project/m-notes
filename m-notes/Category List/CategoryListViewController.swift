@@ -13,6 +13,7 @@ class CategoryListViewController: UIViewController {
 
     @IBOutlet weak var categoryListTableView: UITableView!
     @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
     // TODO: BG VIEW
     
     fileprivate var categories = [PFObject]()
@@ -26,6 +27,15 @@ class CategoryListViewController: UIViewController {
         self.categoryListTableView.rowHeight = UITableView.automaticDimension
         self.categoryListTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
     }
+    
+    fileprivate func presentCategoryViewController(withCategory category: PFObject) {
+        let storyboard = UIStoryboard(name: "Category", bundle: nil)
+        let orderConfirmationNC = storyboard.instantiateViewController(withIdentifier: "CategoryNC") as! UINavigationController
+        let categoryVC = orderConfirmationNC.viewControllers[0] as! CategoryViewController
+        categoryVC.category = category
+        categoryVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(categoryVC, animated: true)
+    }
 }
 
 // MARK: - Parse
@@ -38,7 +48,7 @@ extension CategoryListViewController {
         }
         
         func presentOrdersRetrievalErrorAlert(withCompletion completion: (() -> ())? = nil) {
-            let ac = UIAlertController(title: "Unable to Retrieve Categories", message: "Please check your Internet connection and try again.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "unable to retrieve categories", message: "Please check your Internet connection and try again.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             ac.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { _ in
                 completion?()
@@ -59,61 +69,24 @@ extension CategoryListViewController {
                     self.stopLoadingViewAnimation()
                     return
                 }
-                let orderIds = orders.compactMap { $0.objectId }
-                let query = PFQuery(className: "Order")
-                query.whereKey("objectId", containedIn: orderIds)
-                query.order(byDescending: "createdAt")
+                let categoryIds = categories.compactMap { $0.objectId }
+                let query = PFQuery(className: "Category")
+                query.whereKey("objectId", containedIn: categoryIds)
+                query.order(byDescending: "updatedAt")
                 query.findObjectsInBackground() { (results: [PFObject]?, error: Error?) in
                     self.stopLoadingViewAnimation()
                     if results == nil || error != nil {
-                        print("Parse: Error retrieving orders for current user -", error?._code as Any, "-", error?.localizedDescription as Any)
+                        print("Parse: Error retrieving categories for current user -", error?._code as Any, "-", error?.localizedDescription as Any)
                         presentOrdersRetrievalErrorAlert(withCompletion: {
                             self.retrieveOrdersForCurrentUser(withCompletion: completion)
                         })
                     } else {
-                        print("Parse: Found", results!.count, "orders:", results!)
+                        print("Parse: Found", results!.count, "categories:", results!)
                         self.categories = results!
                         completion?()
                     }
                 }
             }
-        }
-    }
-    
-    fileprivate func retrieveCoffeeShopAndPresentOrderConfirmationViewController(forOrder order: PFObject) {
-        func presentCoffeeShopRetrievalErrorAlert(withCompletion completion: (() -> ())? = nil) {
-            let ac = UIAlertController(title: "Unable to Retrieve Coffee Shop for Order", message: "Please check your Internet connection and try again.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            ac.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { _ in
-                completion?()
-            }))
-            present(ac, animated: true)
-        }
-        
-        func retrieveCoffeeShop(forOrder order: PFObject, withCompletionOnSuccess completion: ((PFObject) -> ())? = nil) {
-            guard let coffeeShop = order["coffeeShop"] as? PFObject else {
-                return
-            }
-            guard let _ = coffeeShop.objectId else {
-                return
-            }
-            let query = PFQuery(className: "CoffeeShop")
-            // startLoadingViewAnimation()
-            query.getObjectInBackground(withId: coffeeShop.objectId!) { (object: PFObject?, error: Error?) in
-                // self.stopLoadingViewAnimation()
-                if object == nil || error != nil {
-                    print("Parse: Error retrieving coffee shop object -", error?._code as Any, "-", error?.localizedDescription as Any)
-                    presentCoffeeShopRetrievalErrorAlert() {
-                        retrieveCoffeeShop(forOrder: order, withCompletionOnSuccess: completion)
-                    }
-                } else {
-                    completion?(object!)
-                }
-            }
-        }
-        
-        retrieveCoffeeShop(forOrder: order) { (coffeeShop: PFObject) in
-            self.presentOrderConfirmationViewController(withOrder: order, forCoffeeShop: coffeeShop)
         }
     }
 }
@@ -123,7 +96,7 @@ extension CategoryListViewController {
 extension CategoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        retrieveCoffeeShopAndPresentOrderConfirmationViewController(forOrder: self.orders[indexPath.row])
+        presentCategoryViewController(withCategory: self.categories[indexPath.row])
     }
 }
 

@@ -18,6 +18,8 @@ class SignUpViewController: NavigationEmbeddedViewController {
     @IBOutlet weak var scrollViewContentContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: BiggerHitButton!
+    @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
     
     var emailAddress: String?
     var password: String?
@@ -99,8 +101,6 @@ extension SignUpViewController {
         let fullName = self.fullNameTextField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let emailAddress = self.emailTextField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).lowercased()
         let password = self.passwordTextField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let selectedLocation = self.locationPickerView.selectedRow(inComponent: 0)
-        let preferredLocation = (self.locationPickerView.view(forRow: selectedLocation, forComponent: 0) as! UILabel).text!.lowercased()
         
         if fullName.count == 0 || !isValidFullName(fullName) {
             let alertController = UIAlertController(title: "First and Last Name", message: "Please enter a valid first and last name.", preferredStyle: .alert)
@@ -123,7 +123,7 @@ extension SignUpViewController {
             }))
             self.present(alertController, animated: true)
             return
-        } else if !self.termsOfUseCheckboxButton.isSelected {
+        } else if !self.termsOfUseAndPrivacyPolicyCheckboxButton.isSelected {
             let alertController = UIAlertController(title: "Terms of Use and Privacy Policy", message: "In order to register with Kilouett you must read and accept our Terms of Use and Privacy Policy.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true)
@@ -134,7 +134,7 @@ extension SignUpViewController {
             var ac: UIAlertController!
             switch errorCode {
             case 202:
-                ac = UIAlertController(title: "Account Already Exists", message: "Please use a different email address or try logging in instead.", preferredStyle: UIAlertControllerStyle.alert)
+                ac = UIAlertController(title: "Account Already Exists", message: "Please use a different email address or try logging in instead.", preferredStyle: UIAlertController.Style.alert)
                 ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             default:
                 ac = UIAlertController(title: "Unable to Sign Up", message: "Please check your Internet connection and try again.", preferredStyle: .alert)
@@ -152,8 +152,7 @@ extension SignUpViewController {
             newUser.email = emailAddress
             newUser.username = emailAddress
             newUser.password = password
-            newUser["preferredLocation"] = preferredLocation
-            newUser["agreedToTermsOfService"] = self.termsOfUseCheckboxButton.isSelected
+            newUser["agreedToTermsOfService"] = self.termsOfUseAndPrivacyPolicyCheckboxButton.isSelected
             newUser["agreedToTermsOfServiceAt"] = Date()
             startLoadingViewAnimation()
             newUser.signUpInBackground { (success: Bool, error: Error?) in

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class CategoryViewController: NavigationEmbeddedViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    var category: PFObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,9 @@ class CategoryViewController: NavigationEmbeddedViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        // TODO: Ability to edit
+        // TODO: Edit button
+        
+        // TODO: START HERE: Fetch notes
     }
 }
 

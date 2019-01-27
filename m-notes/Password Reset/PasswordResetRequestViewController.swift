@@ -17,8 +17,8 @@ class PasswordResetRequestViewController: NavigationEmbeddedViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var submitButtonTitleLabel: UILabel!
-    @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
     
     var emailAddress: String?
     
@@ -95,11 +95,11 @@ extension PasswordResetRequestViewController {
         var ac: UIAlertController!
         switch errorCode {
         case 101:
-            ac = UIAlertController(title: "Unable to Reset Password", message: "Invalid email.", preferredStyle: UIAlertControllerStyle.alert)
+            ac = UIAlertController(title: "Unable to Reset Password", message: "Invalid email.", preferredStyle: UIAlertController.Style.alert)
         case 205:
-            ac = UIAlertController(title: "Unable to Reset Password", message: "Email not found.", preferredStyle: UIAlertControllerStyle.alert)
+            ac = UIAlertController(title: "Unable to Reset Password", message: "Email not found.", preferredStyle: UIAlertController.Style.alert)
         default:
-            ac = UIAlertController(title: "Unable to Reset Password", message: "Please check your Internet connection and try again.", preferredStyle: UIAlertControllerStyle.alert)
+            ac = UIAlertController(title: "Unable to Reset Password", message: "Please check your Internet connection and try again.", preferredStyle: UIAlertController.Style.alert)
         }
         ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(ac, animated: true, completion: nil)
