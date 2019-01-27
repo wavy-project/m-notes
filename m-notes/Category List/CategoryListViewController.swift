@@ -13,6 +13,7 @@ class CategoryListViewController: UIViewController {
 
     @IBOutlet weak var categoryListTableView: UITableView!
     @IBOutlet weak var loadingView: LoadingView!
+    // TODO: BG VIEW
     
     fileprivate var categories = [PFObject]()
      

@@ -76,4 +76,10 @@ extension AppDelegate {
         loginVC.password = password
         present(loginNC, animated: animated)
     }
+    
+    func presentHomeViewController(animated: Bool) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeTabBarNC = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+        present(homeTabBarNC, animated: animated)
+    }
 }

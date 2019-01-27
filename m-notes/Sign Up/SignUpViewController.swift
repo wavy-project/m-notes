@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Parse
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: NavigationEmbeddedViewController {
     
     var emailAddress: String?
     var password: String?
@@ -137,7 +138,6 @@ extension SignUpViewController {
             newUser["preferredLocation"] = preferredLocation
             newUser["agreedToTermsOfService"] = self.termsOfUseCheckboxButton.isSelected
             newUser["agreedToTermsOfServiceAt"] = Date()
-            newUser["receiveEmails"] = self.receiveEmailsCheckboxButton.isSelected
             startLoadingViewAnimation()
             newUser.signUpInBackground { (success: Bool, error: Error?) in
                 self.stopLoadingViewAnimation()
@@ -145,17 +145,11 @@ extension SignUpViewController {
                     print("Parse: Signup successful")
                     completionOnSuccess?()
                 } else if let _ = error {
-                    
-                    // TODO: PING AMPLITUDE
-                    
                     print("Parse: Error signing up -", error!._code, "-", error?.localizedDescription as Any)
                     presentSignUpErrorAlert(forErrorCode: error!._code) {
                         signUpNewUser(withCompletionOnSuccess: completionOnSuccess)
                     }
                 } else {
-                    
-                    // TODO: PING AMPLITUDE
-                    
                     print("Parse: Unknown error")
                     Utilities.presentErrorAlert(from: self, withTitle: "An Unknown Error Occurred", message: "Sorry. Support has been pinged.", completionOnRetrySelected: {
                         signUpNewUser(withCompletionOnSuccess: completionOnSuccess)
@@ -164,14 +158,49 @@ extension SignUpViewController {
             }
         }
         
+        func addDefaultCategories(withCompletionOnSuccess completionOnSuccess: (() -> ())? = nil) {
+            /*
+             _archive
+             front channel
+             back channel
+             r
+             o
+             y
+             g
+             b
+             i
+             v
+             p
+             */
+        }
+        
         signUpNewUser() {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            if let _ = self.giftedPlanID {
-                self.redeemGiftedPlan() {
-                    appDelegate.presentHomeTabBarController(animated: true)
-                }
-            } else {
-                appDelegate.presentCoffeePreferenceSurveyViewController(animated: true)
-            }
+            appDelegate.presentHomeViewController(animated: true)
         }
+    }
+}
+
+// MARK: - Animation
+
+extension SignUpViewController {
+    fileprivate func startLoadingViewAnimation() {
+        self.loadingView.startAnimating()
+        self.loadingView.isUserInteractionEnabled = true // Block any further touches
+        self.loadingBackgroundView.alpha = 0
+        self.loadingBackgroundView.isHidden = false
+        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve, animations: {
+            self.loadingBackgroundView.alpha = 0.5
+        }, completion: nil)
+    }
+    
+    fileprivate func stopLoadingViewAnimation() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve, animations: {
+            self.loadingBackgroundView.alpha = 0
+        }, completion: { _ in
+            self.loadingBackgroundView.isHidden = true
+        })
+        self.loadingView.isUserInteractionEnabled = false
+        self.loadingView.stopAnimating()
+    }
 }
