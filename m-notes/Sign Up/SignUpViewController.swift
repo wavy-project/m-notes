@@ -191,8 +191,10 @@ extension SignUpViewController {
         }
         
         signUpNewUser() {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.presentHomeViewController(animated: true)
+            addDefaultCategories() {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.presentHomeViewController(animated: true)
+            }
         }
     }
 }

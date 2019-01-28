@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Buglife
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Buglife.shared().start(withEmail: "kilouett.dev@gmail.com")
+        Buglife.shared().invocationOptions = [.shake, .screenshot]
+        // To present manually: Buglife.shared().presentReporter()
+        
+        if let keys = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Keys", ofType: "plist")!) {
+            let configuration = ParseClientConfiguration {
+                
+                // Local staging
+                // $0.applicationId = keys["ParseStagingLocalApplicationID"] as? String
+                // $0.clientKey = keys["ParseStagingLocalClientKey"] as? String
+                // $0.server = keys["ParseStagingLocalServerURL"] as! String
+                
+                // Staging
+                // $0.applicationId = keys["ParseStagingApplicationID"] as? String
+                // $0.clientKey = keys["ParseStagingClientKey"] as? String
+                // $0.server = keys["ParseStagingServerURL"] as! String
+                
+                /*~*~*~*~*~*~*~* CRITICAL SECTION *~*~*~*~*~*~*~*/
+                
+                /*********** ENABLE BEFORE APP DEPLOY ***********/
+                $0.applicationId = keys["ParseApplicationID"] as? String
+                // $0.clientKey = keys["ParseClientKey"] as? String
+                $0.server = keys["ParseServerURL"] as! String
+                
+                /*~*~*~*~*~*~* END CRITICAL SECTION *~*~*~*~*~*~*/
+            }
+            Parse.enableLocalDatastore()
+            Parse.initialize(with: configuration)
+        } else {
+            print("Error: Unable to load Keys.plist.")
+        }
+        
         return true
     }
 
