@@ -1,3 +1,0 @@
-https://blogs.dropbox.com/developers/2015/04/deprecating-the-sync-and-datastore-apis/
-
-https://stackoverflow.com/questions/11451535/gitignore-is-not-working

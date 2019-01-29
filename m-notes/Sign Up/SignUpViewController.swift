@@ -27,6 +27,7 @@ class SignUpViewController: NavigationEmbeddedViewController {
     var giftedPlanID: String?
     
     override func viewDidLoad() {
+        super.navigationBarIsHidden = true
         super.viewDidLoad()
 
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -43,6 +44,8 @@ class SignUpViewController: NavigationEmbeddedViewController {
         self.passwordTextField.text = self.password
         self.passwordTextField.delegate = self
         self.passwordTextField.returnKeyType = .next
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +78,17 @@ class SignUpViewController: NavigationEmbeddedViewController {
     @IBAction func onSignUpButtonTapped(_ sender: Any) {
         self.signUp()
         self.view.endEditing(true)
+    }
+}
+
+// MARK: - Notification Listeners
+
+extension SignUpViewController {
+    @objc fileprivate func keyboardDidShow(notification: NSNotification) {
+        if let height = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height {
+            self.scrollViewContentContainerViewHeightConstraint.constant -= height
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
