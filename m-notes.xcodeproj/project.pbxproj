@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		25619DB121FF7FCF0006AE5F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25619DB021FF7FCF0006AE5F /* Keys.plist */; };
+		25619DBA22009FDF0006AE5F /* Inconsolata-LGC-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25619DB622009FDE0006AE5F /* Inconsolata-LGC-Italic.otf */; };
+		25619DBB22009FDF0006AE5F /* Inconsolata-LGC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25619DB722009FDE0006AE5F /* Inconsolata-LGC-Bold.otf */; };
+		25619DBC22009FDF0006AE5F /* Inconsolata-LGC-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25619DB822009FDF0006AE5F /* Inconsolata-LGC-BoldItalic.otf */; };
+		25619DBD22009FDF0006AE5F /* Inconsolata-LGC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25619DB922009FDF0006AE5F /* Inconsolata-LGC.otf */; };
+		25619DC02200A72A0006AE5F /* UIWindow+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25619DBF2200A72A0006AE5F /* UIWindow+Transitions.swift */; };
 		25D21D9921FE2C3B000CC971 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9821FE2C3B000CC971 /* RoundedButton.swift */; };
 		25D21D9B21FE2C50000CC971 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9A21FE2C50000CC971 /* RoundedView.swift */; };
 		25D21D9D21FE2C99000CC971 /* UITextField+NextTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */; };
@@ -43,6 +48,11 @@
 /* Begin PBXFileReference section */
 		0E72E735BD4B0D4D455CC443 /* Pods-m-notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-m-notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-m-notes/Pods-m-notes.release.xcconfig"; sourceTree = "<group>"; };
 		25619DB021FF7FCF0006AE5F /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		25619DB622009FDE0006AE5F /* Inconsolata-LGC-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-LGC-Italic.otf"; sourceTree = "<group>"; };
+		25619DB722009FDE0006AE5F /* Inconsolata-LGC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-LGC-Bold.otf"; sourceTree = "<group>"; };
+		25619DB822009FDF0006AE5F /* Inconsolata-LGC-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-LGC-BoldItalic.otf"; sourceTree = "<group>"; };
+		25619DB922009FDF0006AE5F /* Inconsolata-LGC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-LGC.otf"; sourceTree = "<group>"; };
+		25619DBF2200A72A0006AE5F /* UIWindow+Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Transitions.swift"; sourceTree = "<group>"; };
 		25D21D9821FE2C3B000CC971 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		25D21D9A21FE2C50000CC971 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+NextTextField.swift"; sourceTree = "<group>"; };
@@ -90,6 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25619DBE22009FE60006AE5F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				25619DB722009FDE0006AE5F /* Inconsolata-LGC-Bold.otf */,
+				25619DB822009FDF0006AE5F /* Inconsolata-LGC-BoldItalic.otf */,
+				25619DB622009FDE0006AE5F /* Inconsolata-LGC-Italic.otf */,
+				25619DB922009FDF0006AE5F /* Inconsolata-LGC.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		25D21DA821FE3184000CC971 /* Log In */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +201,7 @@
 				25619DB021FF7FCF0006AE5F /* Keys.plist */,
 				25ECC3B321F5274000907A04 /* LaunchScreen.storyboard */,
 				25ECC3AE21F5273E00907A04 /* Main.storyboard */,
+				25619DBE22009FE60006AE5F /* Fonts */,
 			);
 			path = "m-notes";
 			sourceTree = "<group>";
@@ -213,6 +235,7 @@
 				25D21D9821FE2C3B000CC971 /* RoundedButton.swift */,
 				25D21D9A21FE2C50000CC971 /* RoundedView.swift */,
 				25D21D9C21FE2C99000CC971 /* UITextField+NextTextField.swift */,
+				25619DBF2200A72A0006AE5F /* UIWindow+Transitions.swift */,
 				25D21D9E21FE2CDD000CC971 /* Utilities.swift */,
 			);
 			path = Common;
@@ -295,11 +318,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25619DBA22009FDF0006AE5F /* Inconsolata-LGC-Italic.otf in Resources */,
 				25619DB121FF7FCF0006AE5F /* Keys.plist in Resources */,
 				25E9F96421FD1B7900BD5F11 /* CategoryList.storyboard in Resources */,
 				25ECC3BD21F52A0100907A04 /* Category.storyboard in Resources */,
 				25E9F96F21FE0F2300BD5F11 /* SignUp.storyboard in Resources */,
+				25619DBB22009FDF0006AE5F /* Inconsolata-LGC-Bold.otf in Resources */,
+				25619DBC22009FDF0006AE5F /* Inconsolata-LGC-BoldItalic.otf in Resources */,
 				25ECC3C221F52CBA00907A04 /* Home.storyboard in Resources */,
+				25619DBD22009FDF0006AE5F /* Inconsolata-LGC.otf in Resources */,
 				25D21DA721FE317D000CC971 /* LogIn.storyboard in Resources */,
 				25E9F96821FD1DA700BD5F11 /* CategoryTableViewCell.xib in Resources */,
 				25D21DAA21FE31AC000CC971 /* PasswordReset.storyboard in Resources */,
@@ -380,6 +407,7 @@
 				25E9F96D21FE074E00BD5F11 /* LoadingView.swift in Sources */,
 				25D21D9B21FE2C50000CC971 /* RoundedView.swift in Sources */,
 				25D21D9921FE2C3B000CC971 /* RoundedButton.swift in Sources */,
+				25619DC02200A72A0006AE5F /* UIWindow+Transitions.swift in Sources */,
 				25E9F97221FE0FD000BD5F11 /* SignUpViewController.swift in Sources */,
 				25ECC3CA21F52E5B00907A04 /* NavigationEmbeddedViewController.swift in Sources */,
 				25ECC3C521F52D4100907A04 /* HomeViewController.swift in Sources */,

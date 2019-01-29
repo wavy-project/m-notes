@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         Buglife.shared().start(withEmail: "kilouett.dev@gmail.com")
         Buglife.shared().invocationOptions = [.shake, .screenshot]
         // To present manually: Buglife.shared().presentReporter()
@@ -80,18 +82,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
 extension AppDelegate {
     private func present(_ viewController: UIViewController, animated: Bool) {
         if animated {
-            viewController.modalTransitionStyle = .crossDissolve
-            window?.rootViewController?.present(viewController, animated: true, completion: {
-                self.window?.rootViewController = viewController
-                // viewController.dismiss(animated: false, completion: nil)
-            })
+            window?.setRootViewController(viewController, options: UIWindow.TransitionOptions(direction: .fade, style: .easeOut))
         } else {
             // Does exactly the same as arrow in storyboard. ("100% parity." --Tim Lee)
             window?.rootViewController = viewController
@@ -99,7 +95,7 @@ extension AppDelegate {
     }
     
     func presentSignUpViewController(animated: Bool, email: String? = nil, password: String? = nil, giftedPlanID: String? = nil) {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
         let signupNC = storyboard.instantiateViewController(withIdentifier: "SignUpNC") as! UINavigationController
         let signupVC = signupNC.viewControllers[0] as! SignUpViewController
         signupVC.emailAddress = email
@@ -109,7 +105,7 @@ extension AppDelegate {
     }
     
     func presentLoginViewController(animated: Bool, email: String? = nil, password: String? = nil) {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let storyboard = UIStoryboard(name: "LogIn", bundle: nil)
         let loginNC = storyboard.instantiateViewController(withIdentifier: "LoginNC") as! UINavigationController
         let loginVC = loginNC.viewControllers[0] as! LoginViewController
         loginVC.emailAddress = email

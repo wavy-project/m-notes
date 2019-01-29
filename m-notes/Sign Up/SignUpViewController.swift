@@ -11,11 +11,12 @@ import Parse
 
 class SignUpViewController: NavigationEmbeddedViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewContentContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var termsOfUseAndPrivacyPolicyCheckboxButton: RoundedButton!
-    @IBOutlet weak var scrollViewContentContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: BiggerHitButton!
     @IBOutlet weak var loadingView: LoadingView!
@@ -31,11 +32,14 @@ class SignUpViewController: NavigationEmbeddedViewController {
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         self.scrollViewContentContainerViewHeightConstraint.constant = UIScreen.main.bounds.height - (statusBarHeight + navigationBarHeight + view.safeAreaInsets.bottom)
+        self.fullNameTextField.attributedPlaceholder = NSAttributedString(string: "full name", attributes: [NSAttributedString.Key.foregroundColor : Constants.gray])
         self.fullNameTextField.delegate = self
         self.fullNameTextField.returnKeyType = .next
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor : Constants.gray])
         self.emailTextField.text = self.emailAddress
         self.emailTextField.delegate = self
         self.emailTextField.returnKeyType = .next
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor : Constants.gray])
         self.passwordTextField.text = self.password
         self.passwordTextField.delegate = self
         self.passwordTextField.returnKeyType = .next
@@ -72,8 +76,6 @@ class SignUpViewController: NavigationEmbeddedViewController {
         self.signUp()
         self.view.endEditing(true)
     }
-    
-
 }
 
 // MARK: - Text Field Delegate

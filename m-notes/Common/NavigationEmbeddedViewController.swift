@@ -13,10 +13,11 @@ class NavigationEmbeddedViewController: UIViewController {
     var navigationBarTintColor: UIColor = .black
     var navigationBarIsHidden = false
     var navigationBarBarTintColor: UIColor?
-    var navigationBarFont: UIFont = UIFont(name: "Poppins-Regular", size: 15)!
+    var navigationBarFont: UIFont = UIFont(name: "Inconsolata LGC", size: 15)!
     
     override func viewDidLoad() {
         setupNavigationController()
+        // setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +27,10 @@ class NavigationEmbeddedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         setupNavigationController()
     }
+    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     func setupNavigationController() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
