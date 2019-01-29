@@ -88,7 +88,7 @@ class SignUpViewController: NavigationEmbeddedViewController {
 extension SignUpViewController {
     @objc fileprivate func keyboardDidShow(notification: NSNotification) {
         if let height = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height {
-            self.scrollViewBottomConstraint.constant = height
+            self.scrollViewBottomConstraint.constant = height - view.safeAreaInsets.bottom
             self.view.layoutIfNeeded()
         }
     }
