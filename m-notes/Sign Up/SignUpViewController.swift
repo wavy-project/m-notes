@@ -12,6 +12,7 @@ import Parse
 class SignUpViewController: NavigationEmbeddedViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewContentContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -45,7 +46,8 @@ class SignUpViewController: NavigationEmbeddedViewController {
         self.passwordTextField.delegate = self
         self.passwordTextField.returnKeyType = .next
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,8 +88,17 @@ class SignUpViewController: NavigationEmbeddedViewController {
 extension SignUpViewController {
     @objc fileprivate func keyboardDidShow(notification: NSNotification) {
         if let height = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height {
-            self.scrollViewContentContainerViewHeightConstraint.constant -= height
+            self.scrollViewBottomConstraint.constant = height
             self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc fileprivate func keyboardWillHide(notification: NSNotification) {
+        if self.scrollViewBottomConstraint.constant != 0 {
+            UIView.animate(withDuration: 0.2) {
+                self.scrollViewBottomConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
         }
     }
 }
