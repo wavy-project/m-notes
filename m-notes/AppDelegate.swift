@@ -47,6 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Parse.initialize(with: configuration)
         } else {
             print("Error: Unable to load Keys.plist.")
+            return false
+        }
+        
+        if let _ = PFUser.current() {
+            presentHomeViewController(animated: true)
+        } else {
+            presentSignUpViewController(animated: true)
         }
         
         return true
