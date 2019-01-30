@@ -39,9 +39,12 @@ class HomeViewController: NavigationEmbeddedViewController {
     }
     
     fileprivate func categoryNavigationController() -> UINavigationController {
-        let findStoryboard = UIStoryboard(name: "Category", bundle: nil)
-        let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryNC") as! UINavigationController
-        findNC.tabBarItem = UITabBarItem(title: "CATEGORY", image: UIImage(named: "category-icon"), selectedImage: nil)
+        // let findStoryboard = UIStoryboard(name: "Category", bundle: nil)
+        // let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryNC") as! UINavigationController
+        
+        // TODO: START HERE: ADD SETTINGS
+        
+        findNC.tabBarItem = UITabBarItem(title: "CONFIGURE", image: UIImage(named: "configure-icon"), selectedImage: nil)
         findNC.tabBarItem.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 9)!
