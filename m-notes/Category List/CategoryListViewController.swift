@@ -11,6 +11,7 @@ import Parse
 
 class CategoryListViewController: UIViewController {
 
+    @IBOutlet weak var noCategoriesView: UIView!
     @IBOutlet weak var categoryListTableView: UITableView!
     @IBOutlet weak var loadingView: LoadingView!
     @IBOutlet weak var loadingBackgroundView: UIView!
@@ -105,9 +106,19 @@ extension CategoryListViewController: UITableViewDelegate {
 extension CategoryListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows = self.categories.count
-        if numberOfRows == 0 {
+        
+        let noCategories = numberOfRows == 0
+        if noCategories {
+            self.noCategoriesView.alpha = 0
+            self.noCategoriesView.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve, animations: {
+                self.noCategoriesView.alpha = 1
+            })
             self.categoryListTableView.separatorStyle = .none
+        } else {
+            self.noCategoriesView.isHidden = true
         }
+        
         return numberOfRows
     }
     

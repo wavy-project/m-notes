@@ -22,21 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(none)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-m5-4Yz">
-                                <rect key="frame" x="146" y="319" width="83" height="29"/>
-                                <fontDescription key="fontDescription" name="InconsolataLGC" family="Inconsolata LGC" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the '+' button above ⤴️ to create a new category." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajt-ua-4w7">
-                                <rect key="frame" x="77.5" y="358" width="220" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="34K-Yy-Q9A"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="InconsolataLGC" family="Inconsolata LGC" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Vu-iS-Bbi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,13 +78,38 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeA-8U-Xa2" customClass="LoadingView" customModule="m_notes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99S-Ap-hfn">
+                                <rect key="frame" x="77.5" y="304" width="220" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(none)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-m5-4Yz">
+                                        <rect key="frame" x="68.5" y="0.0" width="83" height="29"/>
+                                        <fontDescription key="fontDescription" name="InconsolataLGC" family="Inconsolata LGC" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the '+' button above ⤴️ to create a new category." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajt-ua-4w7">
+                                        <rect key="frame" x="0.0" y="29" width="220" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="34K-Yy-Q9A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="InconsolataLGC" family="Inconsolata LGC" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ajt-ua-4w7" firstAttribute="top" secondItem="Q3a-m5-4Yz" secondAttribute="bottom" id="3QR-6Z-Fkj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ajt-ua-4w7" secondAttribute="bottom" id="3au-qj-ATa"/>
+                                    <constraint firstItem="Ajt-ua-4w7" firstAttribute="leading" secondItem="99S-Ap-hfn" secondAttribute="leading" id="4tZ-Li-zvh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ajt-ua-4w7" secondAttribute="trailing" id="8KS-GC-pCr"/>
+                                    <constraint firstItem="Q3a-m5-4Yz" firstAttribute="centerX" secondItem="99S-Ap-hfn" secondAttribute="centerX" id="aV0-Ah-z19"/>
+                                    <constraint firstItem="Q3a-m5-4Yz" firstAttribute="top" secondItem="99S-Ap-hfn" secondAttribute="top" id="cqF-Al-FA1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Q3a-m5-4Yz" firstAttribute="centerX" secondItem="9Vu-iS-Bbi" secondAttribute="centerX" id="Ayn-Zs-Cex"/>
-                            <constraint firstItem="Q3a-m5-4Yz" firstAttribute="centerX" secondItem="Ajt-ua-4w7" secondAttribute="centerX" id="B4r-ec-2uE"/>
-                            <constraint firstItem="Q3a-m5-4Yz" firstAttribute="centerY" secondItem="9Vu-iS-Bbi" secondAttribute="centerY" id="L3A-46-TFT"/>
-                            <constraint firstItem="Ajt-ua-4w7" firstAttribute="top" secondItem="Q3a-m5-4Yz" secondAttribute="bottom" constant="10" id="OiR-8P-fu5"/>
+                            <constraint firstItem="99S-Ap-hfn" firstAttribute="centerY" secondItem="9Vu-iS-Bbi" secondAttribute="centerY" id="GFs-Ow-2DS"/>
                             <constraint firstItem="FjU-8U-kBb" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="OvW-Io-3c6"/>
                             <constraint firstItem="NeA-8U-Xa2" firstAttribute="top" secondItem="N55-Jv-vz0" secondAttribute="top" id="PLx-Tz-DKb"/>
                             <constraint firstItem="9Vu-iS-Bbi" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="SBE-Pi-QyB"/>
@@ -111,6 +121,7 @@
                             <constraint firstItem="FjU-8U-kBb" firstAttribute="top" secondItem="N55-Jv-vz0" secondAttribute="top" id="gno-w2-ic6"/>
                             <constraint firstItem="NeA-8U-Xa2" firstAttribute="leading" secondItem="N55-Jv-vz0" secondAttribute="leading" id="h1W-b3-ehB"/>
                             <constraint firstAttribute="bottom" secondItem="NeA-8U-Xa2" secondAttribute="bottom" id="rDI-do-Os3"/>
+                            <constraint firstItem="99S-Ap-hfn" firstAttribute="centerX" secondItem="9Vu-iS-Bbi" secondAttribute="centerX" id="sKk-cw-E0d"/>
                             <constraint firstAttribute="trailing" secondItem="NeA-8U-Xa2" secondAttribute="trailing" id="z0d-MU-gsi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f04-vV-3ll"/>
@@ -120,6 +131,7 @@
                         <outlet property="categoryListTableView" destination="9Vu-iS-Bbi" id="swG-th-xIP"/>
                         <outlet property="loadingBackgroundView" destination="FjU-8U-kBb" id="QLS-Rc-gbe"/>
                         <outlet property="loadingView" destination="NeA-8U-Xa2" id="ojr-NN-2Zt"/>
+                        <outlet property="noCategoriesView" destination="99S-Ap-hfn" id="SmA-4J-z24"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrM-5F-IBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
