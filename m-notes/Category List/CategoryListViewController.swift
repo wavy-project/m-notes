@@ -104,7 +104,11 @@ extension CategoryListViewController: UITableViewDelegate {
 
 extension CategoryListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories.count
+        let numberOfRows = self.categories.count
+        if numberOfRows == 0 {
+            self.categoryListTableView.separatorStyle = .none
+        }
+        return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

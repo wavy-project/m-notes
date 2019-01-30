@@ -201,27 +201,9 @@ extension SignUpViewController {
             }
         }
         
-        func addDefaultCategories(withCompletionOnSuccess completionOnSuccess: (() -> ())? = nil) {
-            /*
-             _archive
-             front channel
-             back channel
-             r
-             o
-             y
-             g
-             b
-             i
-             v
-             p
-             */
-        }
-        
         signUpNewUser() {
-            addDefaultCategories() {
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.presentHomeViewController(animated: true)
-            }
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.presentHomeViewController(animated: true)
         }
     }
 }
