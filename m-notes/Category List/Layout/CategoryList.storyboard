@@ -126,7 +126,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f04-vV-3ll"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QNa-uu-bZP"/>
+                    <navigationItem key="navigationItem" id="QNa-uu-bZP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dpp-Vu-sVY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryListTableView" destination="9Vu-iS-Bbi" id="swG-th-xIP"/>
                         <outlet property="loadingBackgroundView" destination="FjU-8U-kBb" id="QLS-Rc-gbe"/>

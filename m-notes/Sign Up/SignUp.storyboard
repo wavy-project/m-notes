@@ -47,7 +47,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJC-j4-RB0">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full-name-icon_50" translatesAutoresizingMaskIntoConstraints="NO" id="OcE-EY-8OS">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full-name-icon" translatesAutoresizingMaskIntoConstraints="NO" id="OcE-EY-8OS">
                                                                 <rect key="frame" x="15" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Nec-hE-skI"/>
@@ -87,7 +87,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsG-e6-KMa">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon_50" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-iF-Sln">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-iF-Sln">
                                                                 <rect key="frame" x="15" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Kkb-iF-Sln" secondAttribute="height" multiplier="1:1" id="bX5-fa-lo2"/>
@@ -127,7 +127,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-l1-amn">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password-icon_50" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-Hw-kSM">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-Hw-kSM">
                                                                 <rect key="frame" x="15" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Cse-69-CbB"/>
@@ -411,8 +411,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="email-icon_50" width="180" height="180"/>
-        <image name="full-name-icon_50" width="180" height="180"/>
-        <image name="password-icon_50" width="180" height="180"/>
+        <image name="email-icon" width="180" height="180"/>
+        <image name="full-name-icon" width="180" height="180"/>
+        <image name="password-icon" width="180" height="180"/>
     </resources>
 </document>

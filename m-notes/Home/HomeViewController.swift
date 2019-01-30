@@ -30,24 +30,24 @@ class HomeViewController: NavigationEmbeddedViewController {
     fileprivate func categoryListNavigationController() -> UINavigationController {
         let findStoryboard = UIStoryboard(name: "CategoryList", bundle: nil)
         let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryListNC") as! UINavigationController
-        findNC.tabBarItem = UITabBarItem(title: "CATEGORY LIST", image: UIImage(named: "menu-icon"), selectedImage: nil)
+        findNC.tabBarItem = UITabBarItem(title: "CATEGORY LIST", image: UIImage(named: "categories-icon"), selectedImage: nil)
         findNC.tabBarItem.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 9)!
+            NSAttributedString.Key.font: UIFont(name: "Inconsolata LGC", size: 9)!
             ] as [NSAttributedString.Key : Any], for: .normal)
         return findNC
     }
     
     fileprivate func categoryNavigationController() -> UINavigationController {
-        // let findStoryboard = UIStoryboard(name: "Category", bundle: nil)
-        // let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryNC") as! UINavigationController
+         let findStoryboard = UIStoryboard(name: "Category", bundle: nil)
+         let findNC = findStoryboard.instantiateViewController(withIdentifier: "CategoryNC") as! UINavigationController
         
         // TODO: START HERE: ADD SETTINGS
         
-        findNC.tabBarItem = UITabBarItem(title: "CONFIGURE", image: UIImage(named: "configure-icon"), selectedImage: nil)
+        findNC.tabBarItem = UITabBarItem(title: "SETTINGS", image: UIImage(named: "settings-icon"), selectedImage: nil)
         findNC.tabBarItem.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 9)!
+            NSAttributedString.Key.font: UIFont(name: "Inconsolata LGC", size: 9)!
             ] as [NSAttributedString.Key : Any], for: .normal)
         return findNC
     }
